@@ -10,7 +10,7 @@ bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
 bme680.sea_level_pressure = 1013.25
 
 for i in range(20):
-    print("\nTime: %0.1%f" % time.localtime)
+    print("\nTime:" + str(time.localtime))
     print("Temperature: %0.1f C" % bme680.temperature)
     print("Gas: %d ohm" % bme680.gas)
     print("Humidity: %0.1f %%" % bme680.relative_humidity)

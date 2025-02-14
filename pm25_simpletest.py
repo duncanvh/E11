@@ -85,7 +85,8 @@ while time <= 30:
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
     print()
-    print("Time:" + str(time.localtime()))
+
+    print(time.localtime())
 
     writer.writerow([["time","PM1","PM2.5", "PM10"]])
 

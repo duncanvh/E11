@@ -52,9 +52,9 @@ file = open("data.csv","w", newline=None)
 writer = csv.writer(file)
 writer.writerow(["time","PM1","PM2.5", "PM10"])
 
-time = 0
+T = 0
 
-while time <= 30:
+while T <= 30:
 
     try:
         aqdata = pm25.read()
@@ -90,7 +90,7 @@ while time <= 30:
 
     writer.writerow([["time","PM1","PM2.5", "PM10"]])
 
-    time += 1
+    T += 1
     time.sleep(1)
 
 file.close()

@@ -87,8 +87,15 @@ while T <= 30:
     print()
 
     current_time = time.localtime()
+    year = current_time[0]
+    month = current_time[1]
+    date = current_time[2]
+    hour = current_time[3]
+    minute = current_time[4]
+    second = current_time[5]
 
-    writer.writerow([current_time, aqdata['pm10 standard'],aqdata["pm25 standard"], aqdata["pm100 standard"]])
+
+    writer.writerow([month,"/",date,"/",year,"  ",hour,":", minute,":",second," ", 'pm10 standard = ', aqdata['pm10 standard'],'pm25 standard = ', aqdata["pm25 standard"], 'pm100 standard = ',aqdata["pm100 standard"]])
 
     T += 1
     time.sleep(1)

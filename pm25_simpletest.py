@@ -29,7 +29,7 @@ reset_pin = None
 # uart = busio.UART(board.TX, board.RX, baudrate=9600)
 
 # For use with Raspberry Pi/Linux:
- import serial
+import serial
  uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.25)
 
 # For use with USB-to-serial cable:

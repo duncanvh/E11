@@ -86,9 +86,9 @@ while T <= 30:
     print("---------------------------------------")
     print()
 
-    #print(time.localtime())
+    current_time = time.localtime()
 
-    writer.writerow([current_time, aqdata['pm10 standard'],aqdata["pm25 standard"], aqdata["pm100 standard"]])
+    writer.writerow(current_time, [aqdata['pm10 standard'],aqdata["pm25 standard"], aqdata["pm100 standard"]])
 
     T += 1
     time.sleep(1)

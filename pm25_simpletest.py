@@ -93,7 +93,7 @@ while T <= 30:
     hour = current_time[3]
     minute = current_time[4]
     second = current_time[5]
-    realtime = ' {:.2e} / {:.2e} / {:.2e}'.format(month, date, year)
+    realtime = '{} / {} / {}'.format(month, date, year)
 
     writer.writerow([realtime, aqdata['pm10 standard'], aqdata["pm25 standard"], aqdata["pm100 standard"]])
 

@@ -12,6 +12,7 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 import csv
+import sys
 
 
 reset_pin = None
@@ -53,8 +54,8 @@ writer = csv.writer(file)
 writer.writerow(["time","PM1","PM2.5", "PM10"])
 
 T = 0
-
-while T <= 30:
+runtime = int(sys.argv[1])
+while T < runtime:
 
     try:
         aqdata = pm25.read()

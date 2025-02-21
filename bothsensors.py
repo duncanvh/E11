@@ -33,6 +33,8 @@ file = open("data.csv","w", newline=None)
 writer = csv.writer(file)
 writer.writerow(["time","PM1","PM2.5", "PM10", "BM680 Temp", "BM680 Gas", "BM680 Humidity", "BM680 Pressure", "BM680 Altitude"])
 
+time.sleep(120)
+
 T = 0
 runtime = int(sys.argv[1])
 while T < runtime:

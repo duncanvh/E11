@@ -8,14 +8,14 @@ def my_callback(channel):
     else:
         print('\n ▲ at ' + str(datetime.datetime.now()))
 
-answer = my_callback(17)
-print(answer)
-
 try:
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(17, GPIO.BOTH, callback=my_callback)
- 
+
+answer = my_callback(17)
+print(answer)
+
 finally:
     GPIO.cleanup()
  

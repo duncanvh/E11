@@ -5,9 +5,10 @@ import time
 import sys
 
 T = 0
+counts = 0
 
 def my_callback(channel):
- counts = 0
+ 
  print('\n▼  at ' + str(datetime.datetime.now()))
  if print('\n▼  at ' + str(datetime.datetime.now())) == True:
   counts += 1

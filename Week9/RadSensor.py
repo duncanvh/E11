@@ -5,9 +5,11 @@ import time
 import sys
 
 def my_callback(channel):
- 
+ counts = 0
+ print('\n▼  at ' + str(datetime.datetime.now()))
   if print('\n▼  at ' + str(datetime.datetime.now())) == True:
    counts += 1
+ print('\n ▲ at ' + str(datetime.datetime.now()))
   if print('\n ▲ at ' + str(datetime.datetime.now())) == True:
    counts += 1
  
@@ -20,5 +22,5 @@ while T < runtime:
  T += 10
  time.sleep(10)
 
- 
+print(counts)
 print("Goodbye!")

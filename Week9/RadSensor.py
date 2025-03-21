@@ -12,7 +12,8 @@ def my_callback(channel):
  
  print('\n▼  at ' + str(datetime.datetime.now()))
  print('\n ▲ at ' + str(datetime.datetime.now()))
- counts += 1
+ global counts += 1
+
 
  
 GPIO.setmode(GPIO.BCM)

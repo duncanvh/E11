@@ -4,11 +4,12 @@ import board
 import time
 import sys
 
-T = 0
-
 def my_callback(channel):
- print('\n▼  at ' + str(datetime.datetime.now()))
- print('\n ▲ at ' + str(datetime.datetime.now()))
+ 
+  if print('\n▼  at ' + str(datetime.datetime.now())) == True:
+   counts += 1
+  if print('\n ▲ at ' + str(datetime.datetime.now())) == True:
+   counts += 1
  
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)

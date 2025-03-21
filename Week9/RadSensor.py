@@ -5,6 +5,7 @@ import time
 import sys
 
 T = 0
+global counts
 counts = 0
 
 def my_callback(channel):

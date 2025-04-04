@@ -34,8 +34,8 @@ def my_callback(channel):
 
  
 GPIO.setmode(GPIO.BCM)
-GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
 
 
 runtime = int(sys.argv[1])

@@ -30,8 +30,8 @@ def my_callback(channel):
  hour = current_time[3]
  minute = current_time[4]
  second = current_time[5]
- realtime = '{}/{}/{}/ {}:{}:{} '.format(month, date, year, hour, minute, second)
-
+ realtime = '{}/{}/{} {}:{}:{} '.format(month, date, year, hour, minute, second)
+ writer.writerow([realtime, counts])
 
 
  
@@ -39,16 +39,11 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
 
-
-
 while T < runtime:
- T += 1
- if T % count_int == 0:
-  print(counts)
-
  time.sleep(count_int)
+ T += count_int
+ print(counts)
 
-writer.writerow([realtime, counts])
 print(counts)
 print("Goodbye!")
 file.close()

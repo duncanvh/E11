@@ -29,7 +29,6 @@ def my_callback(channel):
  second = current_time[5]
  realtime = '{}/{}/{}/ {}:{}:{} '.format(month, date, year, hour, minute, second)
  writer.writerow([realtime, counts])
- time.sleep(60)
 
 
  

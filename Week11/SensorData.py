@@ -39,9 +39,8 @@ while T < runtime:
  hour = current_time[3]
  minute = current_time[4]
  second = current_time[5]
- realtime = '{} / {} / {}'.format(month, date, year)
-
-writer.writerow([realtime, counts])
+ realtime = '{}/{}/{}/ {}:{}:{} '.format(month, date, year, hour, minute, second)
+ writer.writerow([realtime, global counts])
  time.sleep(60)
 
 

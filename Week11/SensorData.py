@@ -20,18 +20,6 @@ def my_callback(channel):
  print('\n ▲ at ' + str(datetime.datetime.now()))
  global counts
  counts +=1
-
-
- 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
-
-runtime = int(sys.argv[1])
-while T < runtime:
- T += 60
- if T % 60 == 0:
-  print(counts)
  current_time = time.localtime()
  year = current_time[0]
  month = current_time[1]
@@ -40,7 +28,22 @@ while T < runtime:
  minute = current_time[4]
  second = current_time[5]
  realtime = '{}/{}/{}/ {}:{}:{} '.format(month, date, year, hour, minute, second)
- writer.writerow([realtime, global counts])
+ writer.writerow([realtime, counts])
+ time.sleep(60)
+
+
+ 
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+
+runtime = int(sys.argv[1])
+while T < runtime:
+ T += 60
+ if T % 60 == 0:
+  GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
+  print(counts)
+
  time.sleep(60)
 
 

@@ -34,6 +34,7 @@ def my_callback(channel):
 
  
 GPIO.setmode(GPIO.BCM)
+GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
@@ -41,7 +42,6 @@ runtime = int(sys.argv[1])
 while T < runtime:
  T += 60
  if T % 60 == 0:
-  GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
   print(counts)
 
  time.sleep(60)

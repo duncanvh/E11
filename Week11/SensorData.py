@@ -12,7 +12,7 @@ counts = 0
 
 runtime = int(sys.argv[1])
 count_int = int(sys.argv[2])
-file_name = str(sys.argv[3])+.csv
+file_name = str(sys.argv[3])+".csv"
 file = open(file_name,"w", newline=None)
 writer = csv.writer(file)
 writer.writerow(['Time', 'Counts'])

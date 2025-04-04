@@ -10,7 +10,10 @@ T = 0
 global counts
 counts = 0
 
-file = open("radiationdata.csv","w", newline=None)
+runtime = int(sys.argv[1])
+count_int = int(sys.argv[2])
+file_name = str(sys.argv[3])+.csv
+file = open(file_name,"w", newline=None)
 writer = csv.writer(file)
 writer.writerow(['Time', 'Counts'])
 
@@ -37,13 +40,13 @@ GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
 
 
-runtime = int(sys.argv[1])
+
 while T < runtime:
  T += 60
  if T % 60 == 0:
   print(counts)
 
- time.sleep(60)
+ time.sleep(count_int)
 
 
 print(counts)

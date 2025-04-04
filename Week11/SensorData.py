@@ -23,15 +23,7 @@ def my_callback(channel):
  print('\n ▲ at ' + str(datetime.datetime.now()))
  global counts
  counts +=1
- current_time = time.localtime()
- year = current_time[0]
- month = current_time[1]
- date = current_time[2]
- hour = current_time[3]
- minute = current_time[4]
- second = current_time[5]
- realtime = '{}/{}/{} {}:{}:{} '.format(month, date, year, hour, minute, second)
- writer.writerow([realtime, counts])
+
 
 
  
@@ -42,6 +34,15 @@ GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
 while T < runtime:
  time.sleep(count_int)
  T += count_int
+ current_time = time.localtime()
+ year = current_time[0]
+ month = current_time[1]
+ date = current_time[2]
+ hour = current_time[3]
+ minute = current_time[4]
+ second = current_time[5]
+ realtime = '{}/{}/{} {}:{}:{} '.format(month, date, year, hour, minute, second)
+ writer.writerow([realtime, counts])
  print(counts)
 
 print(counts)

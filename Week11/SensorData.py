@@ -42,8 +42,8 @@ GPIO.add_event_detect(17, GPIO.FALLING, callback=my_callback)
 
 
 while T < runtime:
- T += 60
- if T % 60 == 0:
+ T += 1
+ if T % count_int == 0:
   print(counts)
 
  time.sleep(count_int)

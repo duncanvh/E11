@@ -31,7 +31,7 @@ def my_callback(channel):
  minute = current_time[4]
  second = current_time[5]
  realtime = '{}/{}/{}/ {}:{}:{} '.format(month, date, year, hour, minute, second)
- writer.writerow([realtime, counts])
+
 
 
  
@@ -48,7 +48,7 @@ while T < runtime:
 
  time.sleep(count_int)
 
-
+writer.writerow([realtime, counts])
 print(counts)
 print("Goodbye!")
 file.close()
